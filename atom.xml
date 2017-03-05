@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>昔年的博客</title>
+  <subtitle>世间风物论自由，喜一生我有</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-03-05T11:04:10.739Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Fueling-psx</name>
+    <email>1783495167@qq.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习HTML-语义化</title>
+    <link href="http://yoursite.com/2017/03/03/first-file/"/>
+    <id>http://yoursite.com/2017/03/03/first-file/</id>
+    <published>2017-03-03T08:04:39.000Z</published>
+    <updated>2017-03-05T11:04:10.739Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>“ HTML的元素、属性和属性值都定义了某种含义。如lang属性就代表内容的语言。 作者不能以它们本身合理的语s义目的之外的方式来使用元素、属性和属性值。“
+</code></pre><p>——WHATWG   标准</p>
+<p>我们知道HTML5是W3C对以前HTML4.01版本的补充和修订，支持了很多页面交互的元素标签，并提出了HTML的编写规范标准，其中就包括语义化HTMl文档。那么html的语义化有什么用处和作用呢。</p>
+<p>  ● HTML语义化的理解<br>定义上是说语义化的HTMl是描述文档内容类型的HTML元素。也就是可以这样理        解为html语义化是以规范标准来书写html文档，使得结构层次清晰明了，不必写过多的div，从而帮助浏览器更好地读懂html文档（浏览器以前解析html的话，若无正确语义标识，浏览器很难解析html文档的标签内容）。比如根据html5大纲算法，语义化html文档应是用区块元素，即是用section、article、aside和nav这四种。s</p>
+<p>简单来说就是语义化的作用是使书写HTML文档结构具有语义性，即层次结构符合标准规范。</p>
+<ol>
+<li>使得浏览器解析时能更好的读懂我们书写的html文档结构排布，便于浏览器快速地解析文档，渲染页面。</li>
+<li>自然而然我们人也能便于读懂HTML文档。也便于后期修改维护页面。</li>
+<li>还有一个就是方便搜索引擎抓取页面内容（也就是使搜索引擎更好理解）。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;“ HTML的元素、属性和属性值都定义了某种含义。如lang属性就代表内容的语言。 作者不能以它们本身合理的语s义目的之外的方式来使用元素、属性和属性值。“
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;——WHATWG   标准&lt;/p&gt;
+&lt;p&gt;我们知道HTML5是W3C
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/03/03/hello-world/"/>
+    <id>http://yoursite.com/2017/03/03/hello-world/</id>
+    <published>2017-03-03T07:42:41.170Z</published>
+    <updated>2017-03-03T07:51:57.529Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
