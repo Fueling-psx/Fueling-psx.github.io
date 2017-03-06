@@ -54,6 +54,75 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-03-06T15:24:11.000Z"><a href="/2017/03/06/cssone-file/">2017-03-06</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/03/06/cssone-file/">CSS样式选择器</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>首先，外联样式表通过<link>标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于<link>标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。</p>
+<p>可以使用meta元素来设置自选样式表：<br>    <pre><code><meta http-equiv="Default-Style" content="select theme"></code></pre></p>
+<p>&lt;link rel=”alternate stylesheet” href=”css/theme1.css /&gt;</p>
+<p>CSS3选择器有以下几种：</p>
+<ol>
+<li><p>元素选择器：</p>
+<pre><code>通用元素选择器:    * { }
+class类选择器：    .error { }
+id选择器：         #id { }
+类型选择器：       p { }</code></pre>
+</li>
+<li><p>关系选择器：</p>
+<pre><code>E F 包含选择符:     选择所有被E元素包含的F元素。 
+E>F 子选择符选择：  所有作为E元素的子元素F。 
+E+F 相邻选择符： 选择紧贴在E元素之后F元素。 
+E~F 兄弟选择符： 选择E元素所有兄弟元素F。</code></pre>
+</li>
+<li><p>属性选择器：</p>
+ <pre><code>E[att] ：选择具有att属性的E元素。 
+E[att="val"] ： 选择具有att属性且属性值等于val的E元素。 
+E[att$="val"] ： 选择具有att属性且属性值为以val结尾的字符串的E元素。 
+E[att*="val"] ： 选择具有att属性且属性值为包含val的字符串的E元素。 </code></pre>
+</li>
+<li><p>伪类选择器：</p>
+ <pre><code>E:link：设置超链接a在未被访问前的样式。 
+E:visited：设置超链接a在其链接地址已被访问过时的样式。 
+E:hover ：设置元素在其鼠标悬停时的样式。 
+E:active ： 设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式。 
+E:focus：设置元素在成为输入焦点（该元素的onfocus事件发生）时的样式。 </code></pre>
+</li>
+<li><p>伪对象选择器：</p>
+ <pre><code>E:first-letter/E::first-letter ： 设置对象内的第一个字符的样式。 
+E:first-line/E::first-line ： 设置对象内的第一行的样式。 
+E:before/E::before ： 设置在对象前（依据对象树的逻辑结构）发生的内容。
+E:after/E::after ： 设置在对象后（依据对象树的逻辑结构）发生的内容。
+E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-03-06T02:30:50.000Z"><a href="/2017/03/06/hexo-file/">2017-03-06</a></time>
       
       
@@ -70,7 +139,6 @@
 <li><p>搭建环境，安装node.js、git，这几步安装的话，没有坑，一般都可以完成，所以不做过多详细说明了</p>
 </li>
 <li><p>hexo的安装配置（<em>注意：hexo的不同版本很多配置是不一样的</em>）</p>
-<p>  a. hexo安装:<br> hexo是一款基于Node.js的静态博客框架。首先创建一个自定义文件夹<br> 在命令行进入此文件夹下，输入安装命令：<br> <code>npm install hexo-cli -g</code><br> <code>npm install hexo --save</code></p>
       
     </div>
     <footer>
@@ -107,6 +175,8 @@
     <div class="entry">
       
         <p>我们知道HTML5是W3C对以前HTML4.01版本的补充和修订，支持了很多页面交互的元素标签，并提出了HTML的编写规范标准，其中就包括语义化HTMl文档。那么html的语义化有什么用处和作用呢。</p>
+<p>“ HTML的元素、属性和属性值都定义了某种含义。如lang属性就代表内容的语言。作者不能以它们本身合理的语s义目的之外的方式来使用元素、属性和属性值。“<br>                                                                                ——WHATWG   标准</p>
+<p>● HTML语义化的理解<br>
       
     </div>
     <footer>
@@ -136,7 +206,7 @@
       
       
   
-    <h1 class="title"><a href="/2017/03/03/hello-world/">我的第一篇博客</a></h1>
+    <h1 class="title"><a href="/2017/03/03/hello-world/">随笔感悟</a></h1>
   
 
     </header>
@@ -144,7 +214,7 @@
       
         <p>在写博客中积累自己的知识和经验，积极与他人分享和交流想法——我最初的想法而已</p>
 <p>我自己感性时比较文艺，理性时喜欢逻辑思考一些东西，也有自己的想法。平时热爱运动，喜欢踢球，愿意<br>与他人分享喜悦。博客呢，就会记录我平时的一些感想点滴和心情日记（主要还是写技术了。。。）。</p>
-<p>热爱自己所从事的专业，喜欢前端、喜欢GitHub上的绿点点、喜欢刷算法题看到Accepted。<br>
+<p>热爱自己所从事的专业，喜欢前端、喜欢GitHub上的绿点点、喜欢刷算法题看到Accepted。</p>
       
     </div>
     <footer>
@@ -173,7 +243,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Buscar">
     <input type="hidden" name="q" value="site:fueling-psx.github.io">
   </form>
 </div>
@@ -182,9 +252,9 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag-Cloud</h3>
+  <h3 class="title">Nube de Etiquetas</h3>
   <div class="entry">
-    <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
   </div>
 </div>
 

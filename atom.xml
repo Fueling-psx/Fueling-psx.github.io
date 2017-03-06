@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fueling-psx.github.io/"/>
-  <updated>2017-03-06T03:56:18.420Z</updated>
+  <updated>2017-03-06T15:37:02.875Z</updated>
   <id>https://fueling-psx.github.io/</id>
   
   <author>
@@ -16,11 +16,69 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CSS样式选择器</title>
+    <link href="https://fueling-psx.github.io/2017/03/06/cssone-file/"/>
+    <id>https://fueling-psx.github.io/2017/03/06/cssone-file/</id>
+    <published>2017-03-06T15:24:11.000Z</published>
+    <updated>2017-03-06T15:37:02.875Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先，外联样式表通过<link>标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于<link>标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。</p>
+<p>可以使用meta元素来设置自选样式表：<br>    <pre><code><meta http-equiv="Default-Style" content="select theme"></code></pre></p>
+<p>&lt;link rel=”alternate stylesheet” href=”css/theme1.css /&gt;</p>
+<p>CSS3选择器有以下几种：</p>
+<ol>
+<li><p>元素选择器：</p>
+<pre><code>通用元素选择器:    * { }
+class类选择器：    .error { }
+id选择器：         #id { }
+类型选择器：       p { }</code></pre>
+</li>
+<li><p>关系选择器：</p>
+<pre><code>E F 包含选择符:     选择所有被E元素包含的F元素。 
+E>F 子选择符选择：  所有作为E元素的子元素F。 
+E+F 相邻选择符： 选择紧贴在E元素之后F元素。 
+E~F 兄弟选择符： 选择E元素所有兄弟元素F。</code></pre>
+</li>
+<li><p>属性选择器：</p>
+ <pre><code>E[att] ：选择具有att属性的E元素。 
+E[att="val"] ： 选择具有att属性且属性值等于val的E元素。 
+E[att$="val"] ： 选择具有att属性且属性值为以val结尾的字符串的E元素。 
+E[att*="val"] ： 选择具有att属性且属性值为包含val的字符串的E元素。 </code></pre>
+</li>
+<li><p>伪类选择器：</p>
+ <pre><code>E:link：设置超链接a在未被访问前的样式。 
+E:visited：设置超链接a在其链接地址已被访问过时的样式。 
+E:hover ：设置元素在其鼠标悬停时的样式。 
+E:active ： 设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式。 
+E:focus：设置元素在成为输入焦点（该元素的onfocus事件发生）时的样式。 </code></pre>
+</li>
+<li><p>伪对象选择器：</p>
+ <pre><code>E:first-letter/E::first-letter ： 设置对象内的第一个字符的样式。 
+E:first-line/E::first-line ： 设置对象内的第一行的样式。 
+E:before/E::before ： 设置在对象前（依据对象树的逻辑结构）发生的内容。
+E:after/E::after ： 设置在对象后（依据对象树的逻辑结构）发生的内容。
+E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先，外联样式表通过&lt;link&gt;标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于&lt;link&gt;标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。&lt;/p&gt;
+&lt;p&gt;可以使用meta元素来设
+    
+    </summary>
+    
+    
+      <category term="CSS3" scheme="https://fueling-psx.github.io/tags/CSS3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>浅谈用Hexo搭建GitHub博客</title>
     <link href="https://fueling-psx.github.io/2017/03/06/hexo-file/"/>
     <id>https://fueling-psx.github.io/2017/03/06/hexo-file/</id>
     <published>2017-03-06T02:30:50.000Z</published>
-    <updated>2017-03-06T03:56:18.420Z</updated>
+    <updated>2017-03-06T04:05:14.040Z</updated>
     
     <content type="html"><![CDATA[<p>在GitHub上一般是用Hexo搭建博客，而搭建博客则是要清楚应分为几个步骤去做：</p>
 <p>首先要有个github账号</p>
@@ -28,8 +86,8 @@
 <li><p>搭建环境，安装node.js、git，这几步安装的话，没有坑，一般都可以完成，所以不做过多详细说明了</p>
 </li>
 <li><p>hexo的安装配置（<em>注意：hexo的不同版本很多配置是不一样的</em>）</p>
+<a id="more"></a>        
 <p>  a. hexo安装:<br> hexo是一款基于Node.js的静态博客框架。首先创建一个自定义文件夹<br> 在命令行进入此文件夹下，输入安装命令：<br> <code>npm install hexo-cli -g</code><br> <code>npm install hexo --save</code></p>
- <a id="more"></a>
 <p> 输入命令后就会安装完毕，在命令行输入<br> <code>hexo -v</code><br> 如果看到了很多行hexo版本及信息，就安装成功了</p>
 <p> b. hexo配置：    接着输入命令行：</p>
  <pre><code>hexo init
@@ -84,7 +142,6 @@ hexo d</code></pre>
 &lt;li&gt;&lt;p&gt;搭建环境，安装node.js、git，这几步安装的话，没有坑，一般都可以完成，所以不做过多详细说明了&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;hexo的安装配置（&lt;em&gt;注意：hexo的不同版本很多配置是不一样的&lt;/em&gt;）&lt;/p&gt;
-&lt;p&gt;  a. hexo安装:&lt;br&gt; hexo是一款基于Node.js的静态博客框架。首先创建一个自定义文件夹&lt;br&gt; 在命令行进入此文件夹下，输入安装命令：&lt;br&gt; &lt;code&gt;npm install hexo-cli -g&lt;/code&gt;&lt;br&gt; &lt;code&gt;npm install hexo --save&lt;/code&gt;&lt;/p&gt;
     
     </summary>
     
@@ -100,12 +157,11 @@ hexo d</code></pre>
     <link href="https://fueling-psx.github.io/2017/03/03/first-file/"/>
     <id>https://fueling-psx.github.io/2017/03/03/first-file/</id>
     <published>2017-03-03T08:04:39.000Z</published>
-    <updated>2017-03-06T03:59:56.936Z</updated>
+    <updated>2017-03-06T15:26:18.713Z</updated>
     
     <content type="html"><![CDATA[<p>我们知道HTML5是W3C对以前HTML4.01版本的补充和修订，支持了很多页面交互的元素标签，并提出了HTML的编写规范标准，其中就包括语义化HTMl文档。那么html的语义化有什么用处和作用呢。</p>
-<a id="more"></a>
 <p>“ HTML的元素、属性和属性值都定义了某种含义。如lang属性就代表内容的语言。作者不能以它们本身合理的语s义目的之外的方式来使用元素、属性和属性值。“<br>                                                                                ——WHATWG   标准</p>
-<p>● HTML语义化的理解<br>    定义上是说语义化的HTMl是描述文档内容类型的HTML元素。也就是可以这样理解为html语义化是以规范标准来书写html文档，使得结构层次清晰明了，不必写过多的div，从而帮助浏览器更好地读懂html文档（浏览器以前解析html的话，若无正确语义标识，浏览器很难解析html文档的标签内容）。比如根据html5大纲算法，语义化html文档应是用区块元素，即是用section、article、aside和nav这四种。</p>
+<p>● HTML语义化的理解<br><a id="more"></a><br>    定义上是说语义化的HTMl是描述文档内容类型的HTML元素。也就是可以这样理解为html语义化是以规范标准来书写html文档，使得结构层次清晰明了，不必写过多的div，从而帮助浏览器更好地读懂html文档（浏览器以前解析html的话，若无正确语义标识，浏览器很难解析html文档的标签内容）。比如根据html5大纲算法，语义化html文档应是用区块元素，即是用section、article、aside和nav这四种。</p>
 <p>简单来说就是语义化的作用是使书写HTML文档结构具有语义性，即层次结构符合标准规范。</p>
 <ol>
 <li>使得浏览器解析时能更好的读懂我们书写的html文档结构排布，便于浏览器快速地解析文档，渲染页面。</li>
@@ -117,6 +173,8 @@ hexo d</code></pre>
     <summary type="html">
     
       &lt;p&gt;我们知道HTML5是W3C对以前HTML4.01版本的补充和修订，支持了很多页面交互的元素标签，并提出了HTML的编写规范标准，其中就包括语义化HTMl文档。那么html的语义化有什么用处和作用呢。&lt;/p&gt;
+&lt;p&gt;“ HTML的元素、属性和属性值都定义了某种含义。如lang属性就代表内容的语言。作者不能以它们本身合理的语s义目的之外的方式来使用元素、属性和属性值。“&lt;br&gt;                                                                                ——WHATWG   标准&lt;/p&gt;
+&lt;p&gt;● HTML语义化的理解&lt;br&gt;
     
     </summary>
     
@@ -126,15 +184,16 @@ hexo d</code></pre>
   </entry>
   
   <entry>
-    <title>我的第一篇博客</title>
+    <title>随笔感悟</title>
     <link href="https://fueling-psx.github.io/2017/03/03/hello-world/"/>
     <id>https://fueling-psx.github.io/2017/03/03/hello-world/</id>
     <published>2017-03-03T07:42:41.170Z</published>
-    <updated>2017-03-06T03:59:48.353Z</updated>
+    <updated>2017-03-06T15:21:33.650Z</updated>
     
     <content type="html"><![CDATA[<p>在写博客中积累自己的知识和经验，积极与他人分享和交流想法——我最初的想法而已</p>
 <p>我自己感性时比较文艺，理性时喜欢逻辑思考一些东西，也有自己的想法。平时热爱运动，喜欢踢球，愿意<br>与他人分享喜悦。博客呢，就会记录我平时的一些感想点滴和心情日记（主要还是写技术了。。。）。</p>
-<p>热爱自己所从事的专业，喜欢前端、喜欢GitHub上的绿点点、喜欢刷算法题看到Accepted。<br><a id="more"></a></p>
+<p>热爱自己所从事的专业，喜欢前端、喜欢GitHub上的绿点点、喜欢刷算法题看到Accepted。</p>
+<a id="more"></a>
 <p>所以啊，记录点滴，新的一天，新的开始</p>
 ]]></content>
     
@@ -142,7 +201,7 @@ hexo d</code></pre>
     
       &lt;p&gt;在写博客中积累自己的知识和经验，积极与他人分享和交流想法——我最初的想法而已&lt;/p&gt;
 &lt;p&gt;我自己感性时比较文艺，理性时喜欢逻辑思考一些东西，也有自己的想法。平时热爱运动，喜欢踢球，愿意&lt;br&gt;与他人分享喜悦。博客呢，就会记录我平时的一些感想点滴和心情日记（主要还是写技术了。。。）。&lt;/p&gt;
-&lt;p&gt;热爱自己所从事的专业，喜欢前端、喜欢GitHub上的绿点点、喜欢刷算法题看到Accepted。&lt;br&gt;
+&lt;p&gt;热爱自己所从事的专业，喜欢前端、喜欢GitHub上的绿点点、喜欢刷算法题看到Accepted。&lt;/p&gt;
     
     </summary>
     
