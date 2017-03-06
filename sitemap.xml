@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2017/03/03/first-file/</loc>
+    <loc>https://fueling-psx.github.io/2017/03/03/first-file/</loc>
     
-    <lastmod>2017-03-05T11:04:10.739Z</lastmod>
+    <lastmod>2017-03-06T03:59:56.936Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/03/hello-world/</loc>
+    <loc>https://fueling-psx.github.io/2017/03/03/hello-world/</loc>
     
-    <lastmod>2017-03-03T07:51:57.529Z</lastmod>
+    <lastmod>2017-03-06T03:59:48.353Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fueling-psx.github.io/2017/03/06/hexo-file/</loc>
+    
+    <lastmod>2017-03-06T03:56:18.420Z</lastmod>
     
   </url>
   

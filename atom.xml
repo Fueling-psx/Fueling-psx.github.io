@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>昔年的博客</title>
-  <subtitle>世间风物论自由，喜一生我有</subtitle>
+  <subtitle>记录点滴-Double Happy Peng</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-03-05T11:04:10.739Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://fueling-psx.github.io/"/>
+  <updated>2017-03-06T03:56:18.420Z</updated>
+  <id>https://fueling-psx.github.io/</id>
   
   <author>
     <name>Fueling-psx</name>
@@ -16,16 +16,96 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>学习HTML-语义化</title>
-    <link href="http://yoursite.com/2017/03/03/first-file/"/>
-    <id>http://yoursite.com/2017/03/03/first-file/</id>
-    <published>2017-03-03T08:04:39.000Z</published>
-    <updated>2017-03-05T11:04:10.739Z</updated>
+    <title>浅谈用Hexo搭建GitHub博客</title>
+    <link href="https://fueling-psx.github.io/2017/03/06/hexo-file/"/>
+    <id>https://fueling-psx.github.io/2017/03/06/hexo-file/</id>
+    <published>2017-03-06T02:30:50.000Z</published>
+    <updated>2017-03-06T03:56:18.420Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>“ HTML的元素、属性和属性值都定义了某种含义。如lang属性就代表内容的语言。 作者不能以它们本身合理的语s义目的之外的方式来使用元素、属性和属性值。“
-</code></pre><p>——WHATWG   标准</p>
-<p>我们知道HTML5是W3C对以前HTML4.01版本的补充和修订，支持了很多页面交互的元素标签，并提出了HTML的编写规范标准，其中就包括语义化HTMl文档。那么html的语义化有什么用处和作用呢。</p>
-<p>  ● HTML语义化的理解<br>定义上是说语义化的HTMl是描述文档内容类型的HTML元素。也就是可以这样理        解为html语义化是以规范标准来书写html文档，使得结构层次清晰明了，不必写过多的div，从而帮助浏览器更好地读懂html文档（浏览器以前解析html的话，若无正确语义标识，浏览器很难解析html文档的标签内容）。比如根据html5大纲算法，语义化html文档应是用区块元素，即是用section、article、aside和nav这四种。s</p>
+    <content type="html"><![CDATA[<p>在GitHub上一般是用Hexo搭建博客，而搭建博客则是要清楚应分为几个步骤去做：</p>
+<p>首先要有个github账号</p>
+<ol>
+<li><p>搭建环境，安装node.js、git，这几步安装的话，没有坑，一般都可以完成，所以不做过多详细说明了</p>
+</li>
+<li><p>hexo的安装配置（<em>注意：hexo的不同版本很多配置是不一样的</em>）</p>
+<p>  a. hexo安装:<br> hexo是一款基于Node.js的静态博客框架。首先创建一个自定义文件夹<br> 在命令行进入此文件夹下，输入安装命令：<br> <code>npm install hexo-cli -g</code><br> <code>npm install hexo --save</code></p>
+ <a id="more"></a>
+<p> 输入命令后就会安装完毕，在命令行输入<br> <code>hexo -v</code><br> 如果看到了很多行hexo版本及信息，就安装成功了</p>
+<p> b. hexo配置：    接着输入命令行：</p>
+ <pre><code>hexo init
+ npm install
+ hexo g</code></pre>
+
+<p> c. 查看是否部署静态博客成功了的话，输入命令行：</p>
+<pre><code>`hexo s`
+就会提示：`INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.`
+        然后在浏览器打开http://localhost:4000/就可以在本地预览了。
+
+ps: 觉得主题不好看的话可以去Github上下载主题，下载到本地目录 themes下就可以了。
+</code></pre></li>
+<li><p>写文章的话，可以在命令行输入：</p>
+<p><code>hexo new &quot;your article file&quot;</code></p>
+<p>部署，发布：</p>
+<pre><code> hexo g
+hexo d</code></pre>
+
+<p>在 \source_posts下找到新建的md文件，可以用markdown打开编写,例：</p>
+<pre><code>![](http://i.imgur.com/CtzuYRn.png)
+</code></pre></li>
+</ol>
+<ol>
+<li>然后就完成了。<br>下面是一些hexo简单命令： <pre><code>hexo new "postName" #新建文章
+ hexo new page "pageName" #新建页面
+ hexo generate #生成静态页面至public目录
+ hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）
+ hexo deploy #部署到GitHub
+ hexo help  # 查看帮助
+ hexo version  #查看Hexo的版本
+ </code></pre>
+缩写和组合命令：
+ <pre><code>hexo n == hexo new
+ hexo g == hexo generate
+ hexo s == hexo server
+ hexo d == hexo deploy
+ hexo s -g #生成并本地预览
+ hexo d -g #生成并上传
+ </code></pre>
+
+
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在GitHub上一般是用Hexo搭建博客，而搭建博客则是要清楚应分为几个步骤去做：&lt;/p&gt;
+&lt;p&gt;首先要有个github账号&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;搭建环境，安装node.js、git，这几步安装的话，没有坑，一般都可以完成，所以不做过多详细说明了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;hexo的安装配置（&lt;em&gt;注意：hexo的不同版本很多配置是不一样的&lt;/em&gt;）&lt;/p&gt;
+&lt;p&gt;  a. hexo安装:&lt;br&gt; hexo是一款基于Node.js的静态博客框架。首先创建一个自定义文件夹&lt;br&gt; 在命令行进入此文件夹下，输入安装命令：&lt;br&gt; &lt;code&gt;npm install hexo-cli -g&lt;/code&gt;&lt;br&gt; &lt;code&gt;npm install hexo --save&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="https://fueling-psx.github.io/tags/Hexo/"/>
+    
+      <category term="GitHub" scheme="https://fueling-psx.github.io/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习HTML-语义化</title>
+    <link href="https://fueling-psx.github.io/2017/03/03/first-file/"/>
+    <id>https://fueling-psx.github.io/2017/03/03/first-file/</id>
+    <published>2017-03-03T08:04:39.000Z</published>
+    <updated>2017-03-06T03:59:56.936Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们知道HTML5是W3C对以前HTML4.01版本的补充和修订，支持了很多页面交互的元素标签，并提出了HTML的编写规范标准，其中就包括语义化HTMl文档。那么html的语义化有什么用处和作用呢。</p>
+<a id="more"></a>
+<p>“ HTML的元素、属性和属性值都定义了某种含义。如lang属性就代表内容的语言。作者不能以它们本身合理的语s义目的之外的方式来使用元素、属性和属性值。“<br>                                                                                ——WHATWG   标准</p>
+<p>● HTML语义化的理解<br>    定义上是说语义化的HTMl是描述文档内容类型的HTML元素。也就是可以这样理解为html语义化是以规范标准来书写html文档，使得结构层次清晰明了，不必写过多的div，从而帮助浏览器更好地读懂html文档（浏览器以前解析html的话，若无正确语义标识，浏览器很难解析html文档的标签内容）。比如根据html5大纲算法，语义化html文档应是用区块元素，即是用section、article、aside和nav这四种。</p>
 <p>简单来说就是语义化的作用是使书写HTML文档结构具有语义性，即层次结构符合标准规范。</p>
 <ol>
 <li>使得浏览器解析时能更好的读懂我们书写的html文档结构排布，便于浏览器快速地解析文档，渲染页面。</li>
@@ -36,41 +116,38 @@
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code&gt;“ HTML的元素、属性和属性值都定义了某种含义。如lang属性就代表内容的语言。 作者不能以它们本身合理的语s义目的之外的方式来使用元素、属性和属性值。“
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;——WHATWG   标准&lt;/p&gt;
-&lt;p&gt;我们知道HTML5是W3C
+      &lt;p&gt;我们知道HTML5是W3C对以前HTML4.01版本的补充和修订，支持了很多页面交互的元素标签，并提出了HTML的编写规范标准，其中就包括语义化HTMl文档。那么html的语义化有什么用处和作用呢。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+      <category term="html" scheme="https://fueling-psx.github.io/tags/html/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/03/03/hello-world/"/>
-    <id>http://yoursite.com/2017/03/03/hello-world/</id>
+    <title>我的第一篇博客</title>
+    <link href="https://fueling-psx.github.io/2017/03/03/hello-world/"/>
+    <id>https://fueling-psx.github.io/2017/03/03/hello-world/</id>
     <published>2017-03-03T07:42:41.170Z</published>
-    <updated>2017-03-03T07:51:57.529Z</updated>
+    <updated>2017-03-06T03:59:48.353Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<p>在写博客中积累自己的知识和经验，积极与他人分享和交流想法——我最初的想法而已</p>
+<p>我自己感性时比较文艺，理性时喜欢逻辑思考一些东西，也有自己的想法。平时热爱运动，喜欢踢球，愿意<br>与他人分享喜悦。博客呢，就会记录我平时的一些感想点滴和心情日记（主要还是写技术了。。。）。</p>
+<p>热爱自己所从事的专业，喜欢前端、喜欢GitHub上的绿点点、喜欢刷算法题看到Accepted。<br><a id="more"></a></p>
+<p>所以啊，记录点滴，新的一天，新的开始</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;在写博客中积累自己的知识和经验，积极与他人分享和交流想法——我最初的想法而已&lt;/p&gt;
+&lt;p&gt;我自己感性时比较文艺，理性时喜欢逻辑思考一些东西，也有自己的想法。平时热爱运动，喜欢踢球，愿意&lt;br&gt;与他人分享喜悦。博客呢，就会记录我平时的一些感想点滴和心情日记（主要还是写技术了。。。）。&lt;/p&gt;
+&lt;p&gt;热爱自己所从事的专业，喜欢前端、喜欢GitHub上的绿点点、喜欢刷算法题看到Accepted。&lt;br&gt;
     
     </summary>
     
+    
+      <category term="随笔" scheme="https://fueling-psx.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
