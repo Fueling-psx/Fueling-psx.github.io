@@ -54,6 +54,44 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-03-07T15:18:03.000Z"><a href="/2017/03/07/jsone-file/">2017-03-07</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/03/07/jsone-file/">初读JS中Infinity、NaN、undefined、null</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <pre><code>首先要确定的是，js有number、string、boolean、Null、undefined和混合Object这六种数据类型。
+</code></pre><h2 id="数值型理解要点（对于Infinity、NaN）："><a href="#数值型理解要点（对于Infinity、NaN）：" class="headerlink" title="数值型理解要点（对于Infinity、NaN）："></a>数值型理解要点（对于Infinity、NaN）：</h2><p>对于数值型number来说。 js中只有这个单一的数字类型。它在内部表示为64位的浮点数（大部分浮点数只能近似地表达小数点以后的部分）。和java的double型一样。所以1和1.0是相同的值。那么算的话便是浮点数运算了，所以运行效率便有所下降，并且js也不是计算语言合适的选择。</p>
+<p>那么说到数值型就要说这两个值Infinity、NaN了：</p>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2017/03/07/jsone-file/#more" class="more-link">阅读全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-03-06T15:24:11.000Z"><a href="/2017/03/06/cssone-file/">2017-03-06</a></time>
       
       
@@ -64,48 +102,18 @@
     </header>
     <div class="entry">
       
-        <p>首先，外联样式表通过<link>标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于<link>标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。</p>
-<p>可以使用meta元素来设置自选样式表：<br>    <pre><code><meta http-equiv="Default-Style" content="select theme"></code></pre></p>
-<p>&lt;link rel=”alternate stylesheet” href=”css/theme1.css /&gt;</p>
+        <p>首先，外联样式表通过<link />标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于<link>标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。</p>
+<p>可以使用meta元素来设置自选样式表：<br>    <pre><code><meta http-equiv="Default-Style" content="select theme" /></p>
+<p>&lt;link rel=”alternate stylesheet” href=”css/theme1.css /&gt;</code></pre></p>
 <p>CSS3选择器有以下几种：</p>
-<ol>
-<li><p>元素选择器：</p>
-<pre><code>通用元素选择器:    * { }
-class类选择器：    .error { }
-id选择器：         #id { }
-类型选择器：       p { }</code></pre>
-</li>
-<li><p>关系选择器：</p>
-<pre><code>E F 包含选择符:     选择所有被E元素包含的F元素。 
-E>F 子选择符选择：  所有作为E元素的子元素F。 
-E+F 相邻选择符： 选择紧贴在E元素之后F元素。 
-E~F 兄弟选择符： 选择E元素所有兄弟元素F。</code></pre>
-</li>
-<li><p>属性选择器：</p>
- <pre><code>E[att] ：选择具有att属性的E元素。 
-E[att="val"] ： 选择具有att属性且属性值等于val的E元素。 
-E[att$="val"] ： 选择具有att属性且属性值为以val结尾的字符串的E元素。 
-E[att*="val"] ： 选择具有att属性且属性值为包含val的字符串的E元素。 </code></pre>
-</li>
-<li><p>伪类选择器：</p>
- <pre><code>E:link：设置超链接a在未被访问前的样式。 
-E:visited：设置超链接a在其链接地址已被访问过时的样式。 
-E:hover ：设置元素在其鼠标悬停时的样式。 
-E:active ： 设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式。 
-E:focus：设置元素在成为输入焦点（该元素的onfocus事件发生）时的样式。 </code></pre>
-</li>
-<li><p>伪对象选择器：</p>
- <pre><code>E:first-letter/E::first-letter ： 设置对象内的第一个字符的样式。 
-E:first-line/E::first-line ： 设置对象内的第一行的样式。 
-E:before/E::before ： 设置在对象前（依据对象树的逻辑结构）发生的内容。
-E:after/E::after ： 设置在对象后（依据对象树的逻辑结构）发生的内容。
-E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
-</ol>
-
       
     </div>
     <footer>
       
+        
+          <div class="alignleft">
+            <a href="/2017/03/06/cssone-file/#more" class="more-link">阅读全文</a>
+          </div>
         
         
       
@@ -243,7 +251,7 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Buscar">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:fueling-psx.github.io">
   </form>
 </div>
@@ -252,9 +260,9 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Nube de Etiquetas</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
   </div>
 </div>
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>学习HTML-语义化 | 昔年的博客</title>
+  <title>初读JS中Infinity、NaN、undefined、null | 昔年的博客</title>
   <meta name="author" content="Fueling-psx">
   
   <meta name="description" content="世间风物论自由，喜一生我有，共四海丰收">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="学习HTML-语义化"/>
+  <meta property="og:title" content="初读JS中Infinity、NaN、undefined、null"/>
   <meta property="og:site_name" content="昔年的博客"/>
 
   
@@ -53,25 +53,52 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-03-03T08:04:39.000Z"><a href="/2017/03/03/first-file/">2017-03-03</a></time>
+        <time datetime="2017-03-07T15:18:03.000Z"><a href="/2017/03/07/jsone-file/">2017-03-07</a></time>
       
       
   
-    <h1 class="title">学习HTML-语义化</h1>
+    <h1 class="title">初读JS中Infinity、NaN、undefined、null</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>我们知道HTML5是W3C对以前HTML4.01版本的补充和修订，支持了很多页面交互的元素标签，并提出了HTML的编写规范标准，其中就包括语义化HTMl文档。那么html的语义化有什么用处和作用呢。</p>
-<p>“ HTML的元素、属性和属性值都定义了某种含义。如lang属性就代表内容的语言。作者不能以它们本身合理的语s义目的之外的方式来使用元素、属性和属性值。“<br>                                                                                ——WHATWG   标准</p>
-<p>● HTML语义化的理解<br><a id="more"></a><br>    定义上是说语义化的HTMl是描述文档内容类型的HTML元素。也就是可以这样理解为html语义化是以规范标准来书写html文档，使得结构层次清晰明了，不必写过多的div，从而帮助浏览器更好地读懂html文档（浏览器以前解析html的话，若无正确语义标识，浏览器很难解析html文档的标签内容）。比如根据html5大纲算法，语义化html文档应是用区块元素，即是用section、article、aside和nav这四种。</p>
-<p>简单来说就是语义化的作用是使书写HTML文档结构具有语义性，即层次结构符合标准规范。</p>
-<ol>
-<li>使得浏览器解析时能更好的读懂我们书写的html文档结构排布，便于浏览器快速地解析文档，渲染页面。</li>
-<li>自然而然我们人也能便于读懂HTML文档。也便于后期修改维护页面。</li>
-<li>还有一个就是方便搜索引擎抓取页面内容（也就是使搜索引擎更好理解）。</li>
-</ol>
+        <pre><code>首先要确定的是，js有number、string、boolean、Null、undefined和混合Object这六种数据类型。
+</code></pre><h2 id="数值型理解要点（对于Infinity、NaN）："><a href="#数值型理解要点（对于Infinity、NaN）：" class="headerlink" title="数值型理解要点（对于Infinity、NaN）："></a>数值型理解要点（对于Infinity、NaN）：</h2><p>对于数值型number来说。 js中只有这个单一的数字类型。它在内部表示为64位的浮点数（大部分浮点数只能近似地表达小数点以后的部分）。和java的double型一样。所以1和1.0是相同的值。那么算的话便是浮点数运算了，所以运行效率便有所下降，并且js也不是计算语言合适的选择。</p>
+<p>那么说到数值型就要说这两个值Infinity、NaN了：</p>
+<a id="more"></a>    
+<p>首先要理解这两个值出自于哪里，是做什么用的？</p>
+<hr>
+<p>   其中Infinity和NaN均出自于js中全局对象，为全局属性（也可以作为全局变量，但只可读）。而 js对这两个值定义是：<em>Infinity是存放“表示正无穷大的数值”</em>，<em>NaN是代表非数字的特殊值，用于指示某个值不是数字。</em></p>
+<p>   举个例子：数值运算中js的整数型运算，但实际上还是浮点数运算。比如对0做除法不会出错，会得到Infinity（即返回无穷大），其中0除0是没有意义的，比如像无穷大除以无穷大，给负数做开方运算，均是没有意义的，像这种情况的都返回NaN。</p>
+<hr>
+<p>ps:需要说明的是，js以 NaN的形式来输出Number.NaN，并且，NaN由于是特殊值，它与其他数值的比较总是不相等的，而只能用isNaN( )函数来比较。</p>
+<p>知道了这么多，对于大部分Infinity、NaN的问题就可以解释了：</p>
+<pre><code>１.typeof(NaN) ,typeof(Infinity)   // 两个都输出number
+2.NaN == NaN                       // false
+3.NaN != NaN                       // true ,这个以命题来解释，NaN的确不能与它自身比较，即不相等
+4.NaN >= NaN                       // false ,比较无意义 
+5."123abc" - 0                     // NaN ,"123abc"强制转换结果是NaN
+6.Infinity > 10                    // true ,无穷大
+7.Infinity == NaN                  // false</code></pre>
+
+<h2 id="那对于undefined和Null"><a href="#那对于undefined和Null" class="headerlink" title="那对于undefined和Null"></a>那对于undefined和Null</h2><p>首先来看下这两个值定义及出处：</p>
+<ul>
+<li><p>undefined是undefined型中的属性，返回一个初始值，表示未定义或者对象属性不存在。浅理解为就是缺少一个值。</p>
+</li>
+<li><p>而Null有几种身份，首先其表示为一种数据类型，且只有一个值：Null；其次它是关键字，即不能用作函数名和变量名；所以其用作null的变量表示“无值、无对象”。在逻辑角度上讲，null值表现为一个空对象指针。</p>
+<p>我们看一下例子：</p>
+<pre><code>typeof null;   // Object(bug)
+typeof undefined;    // Undefined
+Object.prototype.toString.call(null);   //Null
+null == underfined  //true</code></pre>
+
+
+
+
+</li>
+</ul>
+<p>从数值运算来说，它们两做布尔运算或判断时值都是相等的——false。<br>而不同点就是首先类型不同，null是字面量，不可更改，在js中期望引入一个对象，相当于空引用指针。而undefined作为undefined的一个属性，就是表示该变量或对象属性没有赋值。</p>
 
       
     </div>
@@ -81,7 +108,7 @@
         
   
   <div class="tags">
-    <a href="/tags/html/">html</a>
+    <a href="/tags/JavaScript/">JavaScript</a>
   </div>
 
         
@@ -124,7 +151,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="https://fueling-psx.github.io/2017/03/03/first-file/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="https://fueling-psx.github.io/2017/03/07/jsone-file/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fueling-psx.github.io/"/>
-  <updated>2017-03-06T15:37:02.875Z</updated>
+  <updated>2017-03-07T15:30:11.489Z</updated>
   <id>https://fueling-psx.github.io/</id>
   
   <author>
@@ -16,16 +16,75 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>初读JS中Infinity、NaN、undefined、null</title>
+    <link href="https://fueling-psx.github.io/2017/03/07/jsone-file/"/>
+    <id>https://fueling-psx.github.io/2017/03/07/jsone-file/</id>
+    <published>2017-03-07T15:18:03.000Z</published>
+    <updated>2017-03-07T15:30:11.489Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>首先要确定的是，js有number、string、boolean、Null、undefined和混合Object这六种数据类型。
+</code></pre><h2 id="数值型理解要点（对于Infinity、NaN）："><a href="#数值型理解要点（对于Infinity、NaN）：" class="headerlink" title="数值型理解要点（对于Infinity、NaN）："></a>数值型理解要点（对于Infinity、NaN）：</h2><p>对于数值型number来说。 js中只有这个单一的数字类型。它在内部表示为64位的浮点数（大部分浮点数只能近似地表达小数点以后的部分）。和java的double型一样。所以1和1.0是相同的值。那么算的话便是浮点数运算了，所以运行效率便有所下降，并且js也不是计算语言合适的选择。</p>
+<p>那么说到数值型就要说这两个值Infinity、NaN了：</p>
+<a id="more"></a>    
+<p>首先要理解这两个值出自于哪里，是做什么用的？</p>
+<hr>
+<p>   其中Infinity和NaN均出自于js中全局对象，为全局属性（也可以作为全局变量，但只可读）。而 js对这两个值定义是：<em>Infinity是存放“表示正无穷大的数值”</em>，<em>NaN是代表非数字的特殊值，用于指示某个值不是数字。</em></p>
+<p>   举个例子：数值运算中js的整数型运算，但实际上还是浮点数运算。比如对0做除法不会出错，会得到Infinity（即返回无穷大），其中0除0是没有意义的，比如像无穷大除以无穷大，给负数做开方运算，均是没有意义的，像这种情况的都返回NaN。</p>
+<hr>
+<p>ps:需要说明的是，js以 NaN的形式来输出Number.NaN，并且，NaN由于是特殊值，它与其他数值的比较总是不相等的，而只能用isNaN( )函数来比较。</p>
+<p>知道了这么多，对于大部分Infinity、NaN的问题就可以解释了：</p>
+<pre><code>１.typeof(NaN) ,typeof(Infinity)   // 两个都输出number
+2.NaN == NaN                       // false
+3.NaN != NaN                       // true ,这个以命题来解释，NaN的确不能与它自身比较，即不相等
+4.NaN >= NaN                       // false ,比较无意义 
+5."123abc" - 0                     // NaN ,"123abc"强制转换结果是NaN
+6.Infinity > 10                    // true ,无穷大
+7.Infinity == NaN                  // false</code></pre>
+
+<h2 id="那对于undefined和Null"><a href="#那对于undefined和Null" class="headerlink" title="那对于undefined和Null"></a>那对于undefined和Null</h2><p>首先来看下这两个值定义及出处：</p>
+<ul>
+<li><p>undefined是undefined型中的属性，返回一个初始值，表示未定义或者对象属性不存在。浅理解为就是缺少一个值。</p>
+</li>
+<li><p>而Null有几种身份，首先其表示为一种数据类型，且只有一个值：Null；其次它是关键字，即不能用作函数名和变量名；所以其用作null的变量表示“无值、无对象”。在逻辑角度上讲，null值表现为一个空对象指针。</p>
+<p>我们看一下例子：</p>
+<pre><code>typeof null;   // Object(bug)
+typeof undefined;    // Undefined
+Object.prototype.toString.call(null);   //Null
+null == underfined  //true</code></pre>
+
+
+
+
+</li>
+</ul>
+<p>从数值运算来说，它们两做布尔运算或判断时值都是相等的——false。<br>而不同点就是首先类型不同，null是字面量，不可更改，在js中期望引入一个对象，相当于空引用指针。而undefined作为undefined的一个属性，就是表示该变量或对象属性没有赋值。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;首先要确定的是，js有number、string、boolean、Null、undefined和混合Object这六种数据类型。
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;数值型理解要点（对于Infinity、NaN）：&quot;&gt;&lt;a href=&quot;#数值型理解要点（对于Infinity、NaN）：&quot; class=&quot;headerlink&quot; title=&quot;数值型理解要点（对于Infinity、NaN）：&quot;&gt;&lt;/a&gt;数值型理解要点（对于Infinity、NaN）：&lt;/h2&gt;&lt;p&gt;对于数值型number来说。 js中只有这个单一的数字类型。它在内部表示为64位的浮点数（大部分浮点数只能近似地表达小数点以后的部分）。和java的double型一样。所以1和1.0是相同的值。那么算的话便是浮点数运算了，所以运行效率便有所下降，并且js也不是计算语言合适的选择。&lt;/p&gt;
+&lt;p&gt;那么说到数值型就要说这两个值Infinity、NaN了：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://fueling-psx.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS样式选择器</title>
     <link href="https://fueling-psx.github.io/2017/03/06/cssone-file/"/>
     <id>https://fueling-psx.github.io/2017/03/06/cssone-file/</id>
     <published>2017-03-06T15:24:11.000Z</published>
-    <updated>2017-03-06T15:37:02.875Z</updated>
+    <updated>2017-03-07T15:30:12.492Z</updated>
     
     <content type="html"><![CDATA[<p>首先，外联样式表通过<link>标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于<link>标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。</p>
 <p>可以使用meta元素来设置自选样式表：<br>    <pre><code><meta http-equiv="Default-Style" content="select theme"></code></pre></p>
 <p>&lt;link rel=”alternate stylesheet” href=”css/theme1.css /&gt;</p>
 <p>CSS3选择器有以下几种：</p>
+<a id="more"></a>    
 <ol>
 <li><p>元素选择器：</p>
 <pre><code>通用元素选择器:    * { }
@@ -63,8 +122,10 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
     
     <summary type="html">
     
-      &lt;p&gt;首先，外联样式表通过&lt;link&gt;标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于&lt;link&gt;标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。&lt;/p&gt;
-&lt;p&gt;可以使用meta元素来设
+      &lt;p&gt;首先，外联样式表通过&lt;link /&gt;标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于&lt;link&gt;标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。&lt;/p&gt;
+&lt;p&gt;可以使用meta元素来设置自选样式表：&lt;br&gt;    &lt;pre&gt;&lt;code&gt;&lt;meta http-equiv=&quot;Default-Style&quot; content=&quot;select theme&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;link rel=”alternate stylesheet” href=”css/theme1.css /&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;CSS3选择器有以下几种：&lt;/p&gt;
     
     </summary>
     
@@ -78,7 +139,7 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
     <link href="https://fueling-psx.github.io/2017/03/06/hexo-file/"/>
     <id>https://fueling-psx.github.io/2017/03/06/hexo-file/</id>
     <published>2017-03-06T02:30:50.000Z</published>
-    <updated>2017-03-06T04:05:14.040Z</updated>
+    <updated>2017-03-07T12:34:18.211Z</updated>
     
     <content type="html"><![CDATA[<p>在GitHub上一般是用Hexo搭建博客，而搭建博客则是要清楚应分为几个步骤去做：</p>
 <p>首先要有个github账号</p>
