@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>昔年的博客</title>
-  <subtitle>记录点滴-Double Happy Peng</subtitle>
+  <subtitle>世间风物论自由，喜一生我有，记录点滴——Double Happy Peng</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fueling-psx.github.io/"/>
-  <updated>2017-03-07T15:30:11.489Z</updated>
+  <updated>2017-03-23T15:55:28.855Z</updated>
   <id>https://fueling-psx.github.io/</id>
   
   <author>
@@ -16,19 +16,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JS对象原型（继承）及原型链浅结</title>
+    <link href="https://fueling-psx.github.io/2017/03/23/prototype-file/"/>
+    <id>https://fueling-psx.github.io/2017/03/23/prototype-file/</id>
+    <published>2017-03-23T15:26:46.000Z</published>
+    <updated>2017-03-23T15:55:28.855Z</updated>
+    
+    <content type="html"><![CDATA[<p>对于原型（继承）和原型链，我们首先得知道他两定义<br><strong>原型：</strong><br>函数创建时（通过new创建）会有一些属性，比如prototype：返回对象原型的引用，定义储存子类继承的属性和方法，这个（prototype）就是原型，其中fn.prototype则就是原型对象。<br><strong>原型链：</strong>首先对象均有<strong>proto</strong>这个属性，那么该对象通过<strong>proto</strong>可以访问到其构造函数为该对象提供的属性和值，即fn.prototype。而fn.prototype中又有<strong>proto</strong>这个属性，同理实例对象就可以通过<strong>proto</strong>访问到上层函数对象的属性和值，即形成原型链 </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对于原型（继承）和原型链，我们首先得知道他两定义&lt;br&gt;&lt;strong&gt;原型：&lt;/strong&gt;&lt;br&gt;函数创建时（通过new创建）会有一些属性，比如prototype：返回对象原型的引用，定义储存子类继承的属性和方法，这个（prototype）就是原型，其中fn.prot
+    
+    </summary>
+    
+    
+      <category term="Javascript" scheme="https://fueling-psx.github.io/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>初读JS中Infinity、NaN、undefined、null</title>
     <link href="https://fueling-psx.github.io/2017/03/07/jsone-file/"/>
     <id>https://fueling-psx.github.io/2017/03/07/jsone-file/</id>
     <published>2017-03-07T15:18:03.000Z</published>
-    <updated>2017-03-07T15:30:11.489Z</updated>
+    <updated>2017-03-07T15:31:44.387Z</updated>
     
     <content type="html"><![CDATA[<pre><code>首先要确定的是，js有number、string、boolean、Null、undefined和混合Object这六种数据类型。
 </code></pre><h2 id="数值型理解要点（对于Infinity、NaN）："><a href="#数值型理解要点（对于Infinity、NaN）：" class="headerlink" title="数值型理解要点（对于Infinity、NaN）："></a>数值型理解要点（对于Infinity、NaN）：</h2><p>对于数值型number来说。 js中只有这个单一的数字类型。它在内部表示为64位的浮点数（大部分浮点数只能近似地表达小数点以后的部分）。和java的double型一样。所以1和1.0是相同的值。那么算的话便是浮点数运算了，所以运行效率便有所下降，并且js也不是计算语言合适的选择。</p>
 <p>那么说到数值型就要说这两个值Infinity、NaN了：</p>
-<a id="more"></a>    
 <p>首先要理解这两个值出自于哪里，是做什么用的？</p>
-<hr>
-<p>   其中Infinity和NaN均出自于js中全局对象，为全局属性（也可以作为全局变量，但只可读）。而 js对这两个值定义是：<em>Infinity是存放“表示正无穷大的数值”</em>，<em>NaN是代表非数字的特殊值，用于指示某个值不是数字。</em></p>
+<h2 id=""><a href="#" class="headerlink" title="    "></a><a id="more"></a>    </h2><p>   其中Infinity和NaN均出自于js中全局对象，为全局属性（也可以作为全局变量，但只可读）。而 js对这两个值定义是：<em>Infinity是存放“表示正无穷大的数值”</em>，<em>NaN是代表非数字的特殊值，用于指示某个值不是数字。</em></p>
 <p>   举个例子：数值运算中js的整数型运算，但实际上还是浮点数运算。比如对0做除法不会出错，会得到Infinity（即返回无穷大），其中0除0是没有意义的，比如像无穷大除以无穷大，给负数做开方运算，均是没有意义的，像这种情况的都返回NaN。</p>
 <hr>
 <p>ps:需要说明的是，js以 NaN的形式来输出Number.NaN，并且，NaN由于是特殊值，它与其他数值的比较总是不相等的，而只能用isNaN( )函数来比较。</p>
@@ -65,6 +84,8 @@ null == underfined  //true</code></pre>
       &lt;pre&gt;&lt;code&gt;首先要确定的是，js有number、string、boolean、Null、undefined和混合Object这六种数据类型。
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;数值型理解要点（对于Infinity、NaN）：&quot;&gt;&lt;a href=&quot;#数值型理解要点（对于Infinity、NaN）：&quot; class=&quot;headerlink&quot; title=&quot;数值型理解要点（对于Infinity、NaN）：&quot;&gt;&lt;/a&gt;数值型理解要点（对于Infinity、NaN）：&lt;/h2&gt;&lt;p&gt;对于数值型number来说。 js中只有这个单一的数字类型。它在内部表示为64位的浮点数（大部分浮点数只能近似地表达小数点以后的部分）。和java的double型一样。所以1和1.0是相同的值。那么算的话便是浮点数运算了，所以运行效率便有所下降，并且js也不是计算语言合适的选择。&lt;/p&gt;
 &lt;p&gt;那么说到数值型就要说这两个值Infinity、NaN了：&lt;/p&gt;
+&lt;p&gt;首先要理解这两个值出自于哪里，是做什么用的？&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;    &quot;&gt;&lt;/a&gt;
     
     </summary>
     
@@ -78,13 +99,12 @@ null == underfined  //true</code></pre>
     <link href="https://fueling-psx.github.io/2017/03/06/cssone-file/"/>
     <id>https://fueling-psx.github.io/2017/03/06/cssone-file/</id>
     <published>2017-03-06T15:24:11.000Z</published>
-    <updated>2017-03-07T15:30:12.492Z</updated>
+    <updated>2017-03-07T15:33:09.335Z</updated>
     
     <content type="html"><![CDATA[<p>首先，外联样式表通过<link>标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于<link>标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。</p>
 <p>可以使用meta元素来设置自选样式表：<br>    <pre><code><meta http-equiv="Default-Style" content="select theme"></code></pre></p>
 <p>&lt;link rel=”alternate stylesheet” href=”css/theme1.css /&gt;</p>
-<p>CSS3选择器有以下几种：</p>
-<a id="more"></a>    
+<p>CSS3选择器有以下几种：<br><a id="more"></a>    </p>
 <ol>
 <li><p>元素选择器：</p>
 <pre><code>通用元素选择器:    * { }
@@ -125,7 +145,7 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
       &lt;p&gt;首先，外联样式表通过&lt;link /&gt;标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于&lt;link&gt;标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。&lt;/p&gt;
 &lt;p&gt;可以使用meta元素来设置自选样式表：&lt;br&gt;    &lt;pre&gt;&lt;code&gt;&lt;meta http-equiv=&quot;Default-Style&quot; content=&quot;select theme&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&amp;lt;link rel=”alternate stylesheet” href=”css/theme1.css /&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
-&lt;p&gt;CSS3选择器有以下几种：&lt;/p&gt;
+&lt;p&gt;CSS3选择器有以下几种：&lt;br&gt;
     
     </summary>
     
@@ -139,7 +159,7 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
     <link href="https://fueling-psx.github.io/2017/03/06/hexo-file/"/>
     <id>https://fueling-psx.github.io/2017/03/06/hexo-file/</id>
     <published>2017-03-06T02:30:50.000Z</published>
-    <updated>2017-03-07T12:34:18.211Z</updated>
+    <updated>2017-03-07T15:31:58.746Z</updated>
     
     <content type="html"><![CDATA[<p>在GitHub上一般是用Hexo搭建博客，而搭建博客则是要清楚应分为几个步骤去做：</p>
 <p>首先要有个github账号</p>
@@ -147,8 +167,9 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
 <li><p>搭建环境，安装node.js、git，这几步安装的话，没有坑，一般都可以完成，所以不做过多详细说明了</p>
 </li>
 <li><p>hexo的安装配置（<em>注意：hexo的不同版本很多配置是不一样的</em>）</p>
-<a id="more"></a>        
-<p>  a. hexo安装:<br> hexo是一款基于Node.js的静态博客框架。首先创建一个自定义文件夹<br> 在命令行进入此文件夹下，输入安装命令：<br> <code>npm install hexo-cli -g</code><br> <code>npm install hexo --save</code></p>
+<p>  a. hexo安装:</p>
+  <a id="more"></a>    
+<p> hexo是一款基于Node.js的静态博客框架。首先创建一个自定义文件夹<br> 在命令行进入此文件夹下，输入安装命令：<br> <code>npm install hexo-cli -g</code><br> <code>npm install hexo --save</code></p>
 <p> 输入命令后就会安装完毕，在命令行输入<br> <code>hexo -v</code><br> 如果看到了很多行hexo版本及信息，就安装成功了</p>
 <p> b. hexo配置：    接着输入命令行：</p>
  <pre><code>hexo init
@@ -203,6 +224,7 @@ hexo d</code></pre>
 &lt;li&gt;&lt;p&gt;搭建环境，安装node.js、git，这几步安装的话，没有坑，一般都可以完成，所以不做过多详细说明了&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;hexo的安装配置（&lt;em&gt;注意：hexo的不同版本很多配置是不一样的&lt;/em&gt;）&lt;/p&gt;
+&lt;p&gt;  a. hexo安装:&lt;/p&gt;
     
     </summary>
     
@@ -249,20 +271,20 @@ hexo d</code></pre>
     <link href="https://fueling-psx.github.io/2017/03/03/hello-world/"/>
     <id>https://fueling-psx.github.io/2017/03/03/hello-world/</id>
     <published>2017-03-03T07:42:41.170Z</published>
-    <updated>2017-03-06T15:21:33.650Z</updated>
+    <updated>2017-03-07T15:32:08.492Z</updated>
     
     <content type="html"><![CDATA[<p>在写博客中积累自己的知识和经验，积极与他人分享和交流想法——我最初的想法而已</p>
 <p>我自己感性时比较文艺，理性时喜欢逻辑思考一些东西，也有自己的想法。平时热爱运动，喜欢踢球，愿意<br>与他人分享喜悦。博客呢，就会记录我平时的一些感想点滴和心情日记（主要还是写技术了。。。）。</p>
 <p>热爱自己所从事的专业，喜欢前端、喜欢GitHub上的绿点点、喜欢刷算法题看到Accepted。</p>
-<a id="more"></a>
 <p>所以啊，记录点滴，新的一天，新的开始</p>
-]]></content>
+<a id="more"></a>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;在写博客中积累自己的知识和经验，积极与他人分享和交流想法——我最初的想法而已&lt;/p&gt;
 &lt;p&gt;我自己感性时比较文艺，理性时喜欢逻辑思考一些东西，也有自己的想法。平时热爱运动，喜欢踢球，愿意&lt;br&gt;与他人分享喜悦。博客呢，就会记录我平时的一些感想点滴和心情日记（主要还是写技术了。。。）。&lt;/p&gt;
 &lt;p&gt;热爱自己所从事的专业，喜欢前端、喜欢GitHub上的绿点点、喜欢刷算法题看到Accepted。&lt;/p&gt;
+&lt;p&gt;所以啊，记录点滴，新的一天，新的开始&lt;/p&gt;
     
     </summary>
     

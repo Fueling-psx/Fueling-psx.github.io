@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CSS样式选择器 | 昔年的博客</title>
+  <title>JS对象原型（继承）及原型链浅结 | 昔年的博客</title>
   <meta name="author" content="Fueling-psx">
   
-  <meta name="description" content="首先，外联样式表通过标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。
-可以使用meta元素来设置自选样式表：    
-&amp;lt;link rel=”alternate stylesheet” href=”css/theme1.css /&amp;gt;
-CSS3选择器有以下几种：">
+  <meta name="description" content="对于原型（继承）和原型链，我们首先得知道他两定义原型：函数创建时（通过new创建）会有一些属性，比如prototype：返回对象原型的引用，定义储存子类继承的属性和方法，这个（prototype）就是原型，其中fn.prototype则就是原型对象。原型链：首先对象均有proto这个属性，那么该对象">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="CSS样式选择器"/>
+  <meta property="og:title" content="JS对象原型（继承）及原型链浅结"/>
   <meta property="og:site_name" content="昔年的博客"/>
 
   
@@ -56,53 +53,17 @@ CSS3选择器有以下几种：">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-03-06T15:24:11.000Z"><a href="/2017/03/06/cssone-file/">2017-03-06</a></time>
+        <time datetime="2017-03-23T15:26:46.000Z"><a href="/2017/03/23/prototype-file/">2017-03-23</a></time>
       
       
   
-    <h1 class="title">CSS样式选择器</h1>
+    <h1 class="title">JS对象原型（继承）及原型链浅结</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>首先，外联样式表通过<link>标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于<link>标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。</p>
-<p>可以使用meta元素来设置自选样式表：<br>    <pre><code><meta http-equiv="Default-Style" content="select theme"></code></pre></p>
-<p>&lt;link rel=”alternate stylesheet” href=”css/theme1.css /&gt;</p>
-<p>CSS3选择器有以下几种：<br><a id="more"></a>    </p>
-<ol>
-<li><p>元素选择器：</p>
-<pre><code>通用元素选择器:    * { }
-class类选择器：    .error { }
-id选择器：         #id { }
-类型选择器：       p { }</code></pre>
-</li>
-<li><p>关系选择器：</p>
-<pre><code>E F 包含选择符:     选择所有被E元素包含的F元素。 
-E>F 子选择符选择：  所有作为E元素的子元素F。 
-E+F 相邻选择符： 选择紧贴在E元素之后F元素。 
-E~F 兄弟选择符： 选择E元素所有兄弟元素F。</code></pre>
-</li>
-<li><p>属性选择器：</p>
- <pre><code>E[att] ：选择具有att属性的E元素。 
-E[att="val"] ： 选择具有att属性且属性值等于val的E元素。 
-E[att$="val"] ： 选择具有att属性且属性值为以val结尾的字符串的E元素。 
-E[att*="val"] ： 选择具有att属性且属性值为包含val的字符串的E元素。 </code></pre>
-</li>
-<li><p>伪类选择器：</p>
- <pre><code>E:link：设置超链接a在未被访问前的样式。 
-E:visited：设置超链接a在其链接地址已被访问过时的样式。 
-E:hover ：设置元素在其鼠标悬停时的样式。 
-E:active ： 设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式。 
-E:focus：设置元素在成为输入焦点（该元素的onfocus事件发生）时的样式。 </code></pre>
-</li>
-<li><p>伪对象选择器：</p>
- <pre><code>E:first-letter/E::first-letter ： 设置对象内的第一个字符的样式。 
-E:first-line/E::first-line ： 设置对象内的第一行的样式。 
-E:before/E::before ： 设置在对象前（依据对象树的逻辑结构）发生的内容。
-E:after/E::after ： 设置在对象后（依据对象树的逻辑结构）发生的内容。
-E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
-</ol>
+        <p>对于原型（继承）和原型链，我们首先得知道他两定义<br><strong>原型：</strong><br>函数创建时（通过new创建）会有一些属性，比如prototype：返回对象原型的引用，定义储存子类继承的属性和方法，这个（prototype）就是原型，其中fn.prototype则就是原型对象。<br><strong>原型链：</strong>首先对象均有<strong>proto</strong>这个属性，那么该对象通过<strong>proto</strong>可以访问到其构造函数为该对象提供的属性和值，即fn.prototype。而fn.prototype中又有<strong>proto</strong>这个属性，同理实例对象就可以通过<strong>proto</strong>访问到上层函数对象的属性和值，即形成原型链 </p>
 
       
     </div>
@@ -112,7 +73,7 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
         
   
   <div class="tags">
-    <a href="/tags/CSS3/">CSS3</a>
+    <a href="/tags/Javascript/">Javascript</a>
   </div>
 
         
@@ -155,7 +116,7 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="https://fueling-psx.github.io/2017/03/06/cssone-file/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="https://fueling-psx.github.io/2017/03/23/prototype-file/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
