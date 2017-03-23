@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fueling-psx.github.io/"/>
-  <updated>2017-03-23T15:55:28.855Z</updated>
+  <updated>2017-03-23T16:28:32.777Z</updated>
   <id>https://fueling-psx.github.io/</id>
   
   <author>
@@ -20,19 +20,34 @@
     <link href="https://fueling-psx.github.io/2017/03/23/prototype-file/"/>
     <id>https://fueling-psx.github.io/2017/03/23/prototype-file/</id>
     <published>2017-03-23T15:26:46.000Z</published>
-    <updated>2017-03-23T15:55:28.855Z</updated>
+    <updated>2017-03-23T16:28:32.777Z</updated>
     
-    <content type="html"><![CDATA[<p>对于原型（继承）和原型链，我们首先得知道他两定义<br><strong>原型：</strong><br>函数创建时（通过new创建）会有一些属性，比如prototype：返回对象原型的引用，定义储存子类继承的属性和方法，这个（prototype）就是原型，其中fn.prototype则就是原型对象。<br><strong>原型链：</strong>首先对象均有<strong>proto</strong>这个属性，那么该对象通过<strong>proto</strong>可以访问到其构造函数为该对象提供的属性和值，即fn.prototype。而fn.prototype中又有<strong>proto</strong>这个属性，同理实例对象就可以通过<strong>proto</strong>访问到上层函数对象的属性和值，即形成原型链 </p>
+    <content type="html"><![CDATA[<p>对于原型（继承）和原型链，我们首先得知道他两定义  </p>
+<p><strong>原型：</strong>函数创建时（通过new创建）会有一些属性，比如prototype：返回对象原型的引用，定义储存子类继承的属性和方法，这个（prototype）就是原型，其中fn.prototype则就是原型对象。 </p>
+<p><strong>原型链：</strong>首先对象均有<strong>proto</strong>这个属性，那么该对象通过<strong>proto</strong>可以访问到其构造函数为该对象提供的属性和值，即fn.prototype。而fn.prototype中又有<strong>proto</strong>这个属性，同理实例对象就可以通过<strong>proto</strong>访问到上层函数对象的属性和值，即形成原型链  </p>
+<p>那么原型在哪些地方要用呢？继承的时候  </p>
+<ul>
+<li>Js中只有对象有继承。继承的属性和方法都是定义在prototype从而形成一条原型链，该链最终指向null。</li>
+<li>获取原型的话建议用：Object.getPrototypeOf(person1)  ;</li>
+</ul>
+<p>那么原型链在哪些地方要用呢？访问对象属性的时候</p>
+<ul>
+<li>当试图访问对象一个属性，它不仅仅在该对象上的prototype搜寻，如果该对象没有这个属性的话，那它就会顺着这个prototype原型链往上找（只能是在prototype上定义的属性）</li>
+</ul>
+<p>举个栗子：  </p>
+<p><pre><code>function Animal(){<br>    this.type = “Animal”;<br>}<br>Animal.prototype.type = ‘Animal’;<br>function Dog(){ }<br>Dog.prototype = new Animal();<br>var small = new Dog();<br>// 原型链：<br>console.log(small.<strong>proto</strong> === Dog.prototype);  // true<br>console.log(Dog.prototype.<strong>proto</strong> === Animal.prototype);   // true<br>console.log(Animal.prototype.<strong>proto</strong> === Object.prototype);  // true<br></code></pre><br>来张图来表明一下：<br><strong><img src="prototype.jpg" alt=""></strong></p>
+<p>继续更新……</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;对于原型（继承）和原型链，我们首先得知道他两定义&lt;br&gt;&lt;strong&gt;原型：&lt;/strong&gt;&lt;br&gt;函数创建时（通过new创建）会有一些属性，比如prototype：返回对象原型的引用，定义储存子类继承的属性和方法，这个（prototype）就是原型，其中fn.prot
+      &lt;p&gt;对于原型（继承）和原型链，我们首先得知道他两定义  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原型：&lt;/strong&gt;函数创建时（通过new创建）会有一些属性，比如prototype：返回对象原型的引用，定义储存子类继承的属性和方法，这个（prototype）就是原型，其中fn.pr
     
     </summary>
     
     
-      <category term="Javascript" scheme="https://fueling-psx.github.io/tags/Javascript/"/>
+      <category term="JavaScript" scheme="https://fueling-psx.github.io/tags/JavaScript/"/>
     
   </entry>
   
