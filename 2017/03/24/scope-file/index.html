@@ -3,27 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CSS样式选择器 | 昔年的博客</title>
+  <title>函数作用域与作用域链理解 | 昔年的博客</title>
   <meta name="author" content="Fueling-psx">
   
-  <meta name="description" content="首先，外联样式表通过标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。
-可以使用meta元素来设置自选样式表：    
-&amp;lt;link rel=”alternate stylesheet” href=”css/theme1.css /&amp;gt;
-CSS3选择器有以下几种：
-
-元素选择器：
-通用元素选择器:    * { }
-class类选择器：    .error { }
-id选择器：         #id { }
-类型选择器：       p { }
-
-关系选择器：
-E F 包含选择符:     选择所有被E元素包含的F元素。">
+  <meta name="description" content="先来个很有意思的栗子：
+// 函数作用域var scope=”scope”;function fun(){    document.writeln(scope);  //undefined    var scope=”local”;    document.writeln(scope);  //local}fun();document.writeln(scope);     // scope
+var wer = “global”;function fv(){    document.writeln(wer);  // global    wer = ‘function’;    document.writeln(wer);  // function}fv();document.writeln(wer);      // global">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="CSS样式选择器"/>
+  <meta property="og:title" content="函数作用域与作用域链理解"/>
   <meta property="og:site_name" content="昔年的博客"/>
 
   
@@ -65,54 +55,41 @@ E F 包含选择符:     选择所有被E元素包含的F元素。">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-03-06T15:24:11.000Z"><a href="/2017/03/06/cssone-file/">2017-03-06</a></time>
+        <time datetime="2017-03-24T09:38:28.000Z"><a href="/2017/03/24/scope-file/">2017-03-24</a></time>
       
       
   
-    <h1 class="title">CSS样式选择器</h1>
+    <h1 class="title">函数作用域与作用域链理解</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>首先，外联样式表通过<link>标签表现于三种形式，持久样式表、自选样式表、替代样式表。对于<link>标签来说， itle属性很重要，持久样式表没有title属，而替代样式表属性中rel=”alternate tylesheet”。</p>
-<p>可以使用meta元素来设置自选样式表：<br>    <pre><code><meta http-equiv="Default-Style" content="select theme"></code></pre></p>
-<p>&lt;link rel=”alternate stylesheet” href=”css/theme1.css /&gt;</p>
-<p>CSS3选择器有以下几种：</p>
-<ol>
-<li><p>元素选择器：</p>
-<pre><code>通用元素选择器:    * { }
-class类选择器：    .error { }
-id选择器：         #id { }
-类型选择器：       p { }</code></pre>
-</li>
-<li><p>关系选择器：</p>
-<pre><code>E F 包含选择符:     选择所有被E元素包含的F元素。 
-<a id="more"></a>    
-E>F 子选择符选择：  所有作为E元素的子元素F。 
-E+F 相邻选择符： 选择紧贴在E元素之后F元素。 
-E~F 兄弟选择符： 选择E元素所有兄弟元素F。</code></pre>
-</li>
-<li><p>属性选择器：</p>
- <pre><code>E[att] ：选择具有att属性的E元素。 
-E[att="val"] ： 选择具有att属性且属性值等于val的E元素。 
-E[att$="val"] ： 选择具有att属性且属性值为以val结尾的字符串的E元素。 
-E[att*="val"] ： 选择具有att属性且属性值为包含val的字符串的E元素。 </code></pre>
-</li>
-<li><p>伪类选择器：</p>
- <pre><code>E:link：设置超链接a在未被访问前的样式。 
-E:visited：设置超链接a在其链接地址已被访问过时的样式。 
-E:hover ：设置元素在其鼠标悬停时的样式。 
-E:active ： 设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式。 
-E:focus：设置元素在成为输入焦点（该元素的onfocus事件发生）时的样式。 </code></pre>
-</li>
-<li><p>伪对象选择器：</p>
- <pre><code>E:first-letter/E::first-letter ： 设置对象内的第一个字符的样式。 
-E:first-line/E::first-line ： 设置对象内的第一行的样式。 
-E:before/E::before ： 设置在对象前（依据对象树的逻辑结构）发生的内容。
-E:after/E::after ： 设置在对象后（依据对象树的逻辑结构）发生的内容。
-E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
-</ol>
+        <p>先来个很有意思的栗子：</p>
+<p><pre><code>// 函数作用域<br>var scope=”scope”;<br>function fun(){<br>    document.writeln(scope);  //undefined<br>    var scope=”local”;<br>    document.writeln(scope);  //local<br>}<br>fun();<br>document.writeln(scope);     // scope</code></pre></p>
+<p>var wer = “global”;<br>function fv(){<br>    document.writeln(wer);  // global<br>    wer = ‘function’;<br>    document.writeln(wer);  // function<br>}<br>fv();<br>document.writeln(wer);      // global<a id="more"></a><br>为什么会出现这样？显而易见，var这个关键字申明影响到了代码执行的不同<br>那么var关键字申明是怎样的呢？ </p>
+<ul>
+<li>var num = 1; // 在当前域中申明一个变量（如果在函数中申明，称为局部变量，并影响该函数整个局部域的num量）</li>
+<li>num = 1; //  这个事实上是对num属性赋值操作。它会在当前作用域中找到num并赋值，如果没有没有找到，即会在作用链的最顶层对象（全局对象中创造num并赋值）</li>
+</ul>
+<p>其他申明标识符的方式  </p>
+<ul>
+<li>const申明的变量不可更改，而且必须初始化  </li>
+<li>let是在块级作用域申明（在严格模式下使用）。比如函数内部使用let申明的变量，对函数外部无影响    </li>
+</ul>
+<p>PS : 1. 通过var关键字申明的变量具有不可删除属性，而给属性赋值操作的可以被删除；  2. 在JS严格模式下，未申明的标识符赋值会被抛出异常，可以防止申明变量的错误</p>
+<p><strong>作用域和作用域链：</strong></p>
+<p>首先要明确js没有块级作用域！</p>
+<p>作用域就是变量与函数的可访问范围，即控制着变量和函数的生命周期。有全局作用域和局部作用域两种<br>作用域链： </p>
+<ul>
+<li>首先它是一条变量对象的链，用于处理标识符的时候进行检索</li>
+<li>而函数的作用域链则是在执行的时候创建，存储函数内包含的变量和[[scope]]，用于执行上下文。<br>在一同创建的执行环境中，作用域链（比如 aContextScope = [aContext.AO，globalContext.VO]</li>
+</ul>
+<p>PS: 1. JS执行上下文（EC）: 比如执行函数代码块时，传参，先将存在的函数申明提升VO，再变量申明提升AO；2.  栈底总是全局上下文，栈顶是当前活动对象的上下文</p>
+<p>这个可能很抽象……<br>那就举个栗子吧（以变量申明来说）：</p>
+<p><pre><code>// 函数作用链<br>var name = “pengda”;<br>function a(){<br>    document.writeln(name);<br>}<br>function b(){<br>    var name = “penger”;<br>    a();<br>}<br>b();   // pengda</code></pre><br>利用EC和作用域链就很好解释了：  </p>
+<p>执行b的时候，因为JS没有块级作用域，所以a的上一级作用域就是全局作用域。根据EC和作用域链，结果输出为 pengda</p>
+<p>思考： 当将function b() 代码改为 this.name = “penger” ， 输出结果便为penger;</p>
 
       
     </div>
@@ -122,7 +99,7 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
         
   
   <div class="tags">
-    <a href="/tags/CSS3/">CSS3</a>
+    <a href="/tags/JavaScript/">JavaScript</a>
   </div>
 
         
@@ -165,7 +142,7 @@ E::selection ： 设置对象被选择时的颜色。  </code></pre>    </li>
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="https://fueling-psx.github.io/2017/03/06/cssone-file/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="https://fueling-psx.github.io/2017/03/24/scope-file/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>

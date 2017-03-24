@@ -9,7 +9,9 @@
   <meta name="description" content="首先要确定的是，js有number、string、boolean、Null、undefined和混合Object这六种数据类型。
 数值型理解要点（对于Infinity、NaN）：对于数值型number来说。 js中只有这个单一的数字类型。它在内部表示为64位的浮点数（大部分浮点数只能近似地表达小数点以后的部分）。和java的double型一样。所以1和1.0是相同的值。那么算的话便是浮点数运算了，所以运行效率便有所下降，并且js也不是计算语言合适的选择。
 那么说到数值型就要说这两个值Infinity、NaN了：
-首先要理解这两个值出自于哪里，是做什么用的？">
+首先要理解这两个值出自于哪里，是做什么用的？
+
+   其中Infinity和NaN均出自于js中全局对象，为全局属性（也可以作为全局变量，但只可读）。而 js对这两个值定义是：Infinity是存放“表示正无穷大的数值”，NaN是代表非数字的特殊值，用于指示某个值不是数字。">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -70,8 +72,8 @@
 </code></pre><h2 id="数值型理解要点（对于Infinity、NaN）："><a href="#数值型理解要点（对于Infinity、NaN）：" class="headerlink" title="数值型理解要点（对于Infinity、NaN）："></a>数值型理解要点（对于Infinity、NaN）：</h2><p>对于数值型number来说。 js中只有这个单一的数字类型。它在内部表示为64位的浮点数（大部分浮点数只能近似地表达小数点以后的部分）。和java的double型一样。所以1和1.0是相同的值。那么算的话便是浮点数运算了，所以运行效率便有所下降，并且js也不是计算语言合适的选择。</p>
 <p>那么说到数值型就要说这两个值Infinity、NaN了：</p>
 <p>首先要理解这两个值出自于哪里，是做什么用的？</p>
-<h2 id=""><a href="#" class="headerlink" title="    "></a><a id="more"></a>    </h2><p>   其中Infinity和NaN均出自于js中全局对象，为全局属性（也可以作为全局变量，但只可读）。而 js对这两个值定义是：<em>Infinity是存放“表示正无穷大的数值”</em>，<em>NaN是代表非数字的特殊值，用于指示某个值不是数字。</em></p>
-<p>   举个例子：数值运算中js的整数型运算，但实际上还是浮点数运算。比如对0做除法不会出错，会得到Infinity（即返回无穷大），其中0除0是没有意义的，比如像无穷大除以无穷大，给负数做开方运算，均是没有意义的，像这种情况的都返回NaN。</p>
+<hr>
+<p>   其中Infinity和NaN均出自于js中全局对象，为全局属性（也可以作为全局变量，但只可读）。而 js对这两个值定义是：<em>Infinity是存放“表示正无穷大的数值”</em>，<em>NaN是代表非数字的特殊值，用于指示某个值不是数字。</em><br> <a id="more"></a><br>   举个例子：数值运算中js的整数型运算，但实际上还是浮点数运算。比如对0做除法不会出错，会得到Infinity（即返回无穷大），其中0除0是没有意义的，比如像无穷大除以无穷大，给负数做开方运算，均是没有意义的，像这种情况的都返回NaN。</p>
 <hr>
 <p>ps:需要说明的是，js以 NaN的形式来输出Number.NaN，并且，NaN由于是特殊值，它与其他数值的比较总是不相等的，而只能用isNaN( )函数来比较。</p>
 <p>知道了这么多，对于大部分Infinity、NaN的问题就可以解释了：</p>
@@ -138,7 +140,7 @@ null == underfined  //true</code></pre>
 
 
 <section id="comment">
-  <h1 class="title">Comments</h1>
+  <h1 class="title">Kommentare</h1>
 
   
       <div id="fb-root"></div>
@@ -161,7 +163,7 @@ null == underfined  //true</code></pre>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:fueling-psx.github.io">
   </form>
 </div>
@@ -170,7 +172,7 @@ null == underfined  //true</code></pre>
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag Cloud</h3>
+  <h3 class="title">Tag-Cloud</h3>
   <div class="entry">
     <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
   </div>
